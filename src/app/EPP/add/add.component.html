@@ -1,0 +1,32 @@
+<div class="container col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Add Employee Project Period</h3>
+      </div>
+      <div class="card-body">
+        <form action="">
+          <div class="form-group">
+            <label for="id_employee">Id Employee</label>
+            <input #id_employee type="number" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="id_project">Id Project</label>
+            <input #id_project type="number" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="start_date">Start Date</label>
+            <input #start_date type="date" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="end_date">End Date</label>
+            <input #end_date type="date" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="dedication">Dedication</label>
+            <input #dedication type="number" class="form-control" />
+          </div>
+          <button (click)="Save(id_employee.value,id_project.value,start_date.value,end_date.value,dedication.value)" class="btn btn-danger">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>

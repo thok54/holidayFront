@@ -1,0 +1,57 @@
+<div class="container col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Edit Absence</h3>
+      </div>
+      <div class="card-body">
+        <form action="">
+          <div class="form-group">
+            <label for="">Id Employee</label>
+            <input
+              [(ngModel)]="absence.idEmployee"
+              name="idEmployee"
+              type="number"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Type</label>
+            <input
+              [(ngModel)]="absence.type"
+              name="type"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Description</label>
+            <input
+              [(ngModel)]="absence.description"
+              name="description"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Start Date</label>
+            <input
+              [(ngModel)]="absence.startDate"
+              name="startDate"
+              type="date"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">End Date</label>
+            <input
+              [(ngModel)]="project.endDate"
+              name="endDate"
+              type="date"
+              class="form-control"
+            />
+          </div>
+          <button (click)="Update(absence)" class="btn btn-danger">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>

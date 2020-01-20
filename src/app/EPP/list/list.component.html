@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3>List Employee Project Period
+          <button (click)="Add()" class="btn btn-warning">Add</button>
+        </h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr class="text-center">
+              <th>ID</th>
+              <th>EMPLOYEE ID</th>
+              <th>PROJECT ID</th>
+              <th>START DATE</th>
+              <th>END DATE</th>
+              <th>DEDICATION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of epp" class="text-center">
+              <td>{{ item.id }}</td>
+              <td>{{ item.idEmployee }}</td>
+              <td>{{ item.idProject }}</td>
+              <td>{{ item.startDate }}</td>
+              <td>{{ item.endDate }}</td>
+              <td>{{ item.dedication }}</td>
+              <td>
+                <button (click) = "Edit(item)" class="btn btn-warning">Edit</button>
+                <button (click) = "Delete(item)" class="btn btn-danger" style="margin-left: 10px;">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

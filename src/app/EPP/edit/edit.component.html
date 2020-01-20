@@ -1,0 +1,57 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Edit Employee Project Period</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="">Id Employee</label>
+          <input
+            [(ngModel)]="epp.idEmployee"
+            name="idEmployee"
+            type="number"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Id Project</label>
+          <input
+            [(ngModel)]="epp.idProject"
+            name="idProject"
+            type="number"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Start Date</label>
+          <input
+            [(ngModel)]="epp.startDate"
+            name="startDate"
+            type="date"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">End Date</label>
+          <input
+            [(ngModel)]="epp.endDate"
+            name="endDate"
+            type="date"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Dedication</label>
+          <input
+            [(ngModel)]="epp.dedication"
+            name="dedication"
+            type="number"
+            class="form-control"
+          />
+        </div>
+        <button (click)="Update(epp)" class="btn btn-danger">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
