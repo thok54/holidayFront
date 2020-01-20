@@ -18,10 +18,6 @@ export class ListEmployeeComponent implements OnInit {
     });
   }
 
-  Add() {
-    this.router.navigate(["addEmployee"]);
-  }
-
   Edit(employee: Employee): void {
     localStorage.setItem("id", employee.id.toString());
     this.router.navigate(["editEmployee"]);

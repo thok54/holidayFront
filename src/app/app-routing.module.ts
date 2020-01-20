@@ -8,8 +8,6 @@ import { AddComponent } from "./CapUser/add/add.component";
 
 import { ListEmployeeComponent } from "./Employee/list-employee/list-employee.component";
 import { EditEmployeeComponent } from "./Employee/edit-employee/edit-employee.component";
-import { AddEmployeeComponent } from "./Employee/add-employee/add-employee.component";
-import { DeleteEmployeeComponent } from "./Employee/delete-employee/delete-employee.component";
 import { ListAbsenceComponent } from './Absence/list/list.component';
 import { EditAbsenceComponent } from './Absence/edit/edit.component';
 import { AddAbsenceComponent } from './Absence/add/add.component';
@@ -40,8 +38,6 @@ const routes: Routes = [
 
   { path: "employees", component: ListEmployeeComponent },
   { path: "editEmployee", component: EditEmployeeComponent },
-  { path: "addEmployee", component: AddEmployeeComponent },
-  { path: "deleteEmployee", component: DeleteEmployeeComponent },
 
   { path: "absences", component: ListAbsenceComponent },
   { path: "editAbsence", component: EditAbsenceComponent },

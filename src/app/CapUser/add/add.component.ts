@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ServiceService } from "src/app/Service/service.service";
 import { CapUser } from "src/app/Modelo/CapUser";
+import { Employee } from "src/app/Modelo/Employee";
 
 @Component({
   selector: "app-add",
@@ -10,6 +11,7 @@ import { CapUser } from "src/app/Modelo/CapUser";
 })
 export class AddComponent implements OnInit {
   capUser: CapUser = new CapUser();
+  employee: Employee = new Employee();
   constructor(private router: Router, private service: ServiceService) {}
 
   ngOnInit() {}
@@ -20,7 +22,9 @@ export class AddComponent implements OnInit {
     this.capUser.email = email;
     this.capUser.password = password;
 
-    this.service.addCapUser(this.capUser).subscribe(data => {
+    this.service.addCapUser(this.capUser).subscribe();
+
+    this.service.addEmployee(this.employee).subscribe(data => {
       this.router.navigate(["capUsers"]);
     });
   }

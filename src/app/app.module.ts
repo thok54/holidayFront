@@ -12,8 +12,6 @@ import { ServiceService } from "../app/Service/service.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ListEmployeeComponent } from "./Employee/list-employee/list-employee.component";
 import { EditEmployeeComponent } from "./Employee/edit-employee/edit-employee.component";
-import { AddEmployeeComponent } from "./Employee/add-employee/add-employee.component";
-import { DeleteEmployeeComponent } from "./Employee/delete-employee/delete-employee.component";
 import { ListAbsenceComponent } from "./Absence/list/list.component";
 import { EditAbsenceComponent } from "./Absence/edit/edit.component";
 import { AddAbsenceComponent } from "./Absence/add/add.component";
@@ -42,8 +40,6 @@ import { LogoutComponent } from './logout/logout.component';
     DeleteComponent,
     ListEmployeeComponent,
     EditEmployeeComponent,
-    AddEmployeeComponent,
-    DeleteEmployeeComponent,
     ListAbsenceComponent,
     EditAbsenceComponent,
     AddAbsenceComponent,

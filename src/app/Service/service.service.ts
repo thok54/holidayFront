@@ -43,6 +43,7 @@ export class ServiceService {
     return this.http.put<CapUser>(this.UrlUser + "/" + cap_user.id, cap_user);
   }
   deleteCapUser(cap_user: CapUser) {
+    this.http.delete<Employee>(this.UrlEmployee + "/" + cap_user.id);
     return this.http.delete<CapUser>(this.UrlUser + "/" + cap_user.id);
   }
 
