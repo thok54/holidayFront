@@ -8,9 +8,13 @@ import { AuthenticationService } from "../Service/authentication.service";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  //TWEAK DEFAULT VALUES IN LABELS
+  //You can leave email and password as "" so no credentials are added to the labels by default
+  //email = "";
+  //password = "";
+  //*************************************************************************** */
   email = "jeck@gmail.com";
   password = "password";
+  //*************************************************************************** */
   invalidLogin = false;
 
   constructor(
@@ -20,12 +24,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  checkLogin(){
-    if(this.loginservice.authenticate(this.email, this.password))
-    {
-      this.router.navigate([''])
-      this.invalidLogin = false
-    } else
-    this.invalidLogin = true
+  checkLogin() {
+    if (this.loginservice.authenticate(this.email, this.password)) {
+      this.router.navigate([""]);
+      this.invalidLogin = false;
+    } else this.invalidLogin = true;
   }
 }
