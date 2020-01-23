@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { ServiceService } from "./Service/service.service";
+import { AuthenticationService } from './Service/authentication.service';
 
 @Component({
   selector: "app-root",
@@ -8,7 +8,7 @@ import { ServiceService } from "./Service/service.service";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  constructor(private service: ServiceService, private router: Router) {}
+  constructor(private router: Router, private loginService:AuthenticationService) {}
 
   CapUser() {
     this.router.navigate(["capUsers"]);
@@ -32,13 +32,5 @@ export class AppComponent {
 
   EPP() {
     this.router.navigate(["epps"]);
-  }
-
-  LogIn() {
-    this.service.login().subscribe();
-  }
-
-  LogOut() {
-    this.service.logout().subscribe();
   }
 }

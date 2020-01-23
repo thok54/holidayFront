@@ -26,41 +26,42 @@ import { AddEPPComponent } from './EPP/add/add.component';
 import { DeleteEPPComponent } from './EPP/delete/delete.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AuthGuardService } from './Service/auth-guard.service';
 
 
 
 
 const routes: Routes = [
-  { path: "capUsers", component: ListComponent },
-  { path: "editUser", component: EditComponent },
-  { path: "addUser", component: AddComponent },
-  { path: "deleteUser", component: DeleteComponent },
+  { path: "capUsers", component: ListComponent, canActivate:[AuthGuardService] },
+  { path: "editUser", component: EditComponent, canActivate:[AuthGuardService] },
+  { path: "addUser", component: AddComponent, canActivate:[AuthGuardService] },
+  { path: "deleteUser", component: DeleteComponent, canActivate:[AuthGuardService] },
 
-  { path: "employees", component: ListEmployeeComponent },
-  { path: "editEmployee", component: EditEmployeeComponent },
+  { path: "employees", component: ListEmployeeComponent, canActivate:[AuthGuardService] },
+  { path: "editEmployee", component: EditEmployeeComponent, canActivate:[AuthGuardService] },
 
-  { path: "absences", component: ListAbsenceComponent },
-  { path: "editAbsence", component: EditAbsenceComponent },
-  { path: "addAbsence", component: AddAbsenceComponent },
-  { path: "deleteAbsence", component: DeleteAbsenceComponent },
+  { path: "absences", component: ListAbsenceComponent, canActivate:[AuthGuardService] },
+  { path: "editAbsence", component: EditAbsenceComponent, canActivate:[AuthGuardService] },
+  { path: "addAbsence", component: AddAbsenceComponent, canActivate:[AuthGuardService] },
+  { path: "deleteAbsence", component: DeleteAbsenceComponent, canActivate:[AuthGuardService] },
 
-  { path: "projects", component: ListProjectComponent },
-  { path: "editProject", component: EditProjectComponent },
-  { path: "addProject", component: AddProjectComponent },
-  { path: "deleteProject", component: DeleteProjectComponent },
+  { path: "projects", component: ListProjectComponent, canActivate:[AuthGuardService] },
+  { path: "editProject", component: EditProjectComponent, canActivate:[AuthGuardService] },
+  { path: "addProject", component: AddProjectComponent, canActivate:[AuthGuardService] },
+  { path: "deleteProject", component: DeleteProjectComponent, canActivate:[AuthGuardService] },
 
-  { path: "skills", component: ListSkillComponent },
-  { path: "editSkill", component: EditSkillComponent },
-  { path: "addSkill", component: AddSkillComponent },
-  { path: "deleteSkill", component: DeleteSkillComponent },
+  { path: "skills", component: ListSkillComponent, canActivate:[AuthGuardService] },
+  { path: "editSkill", component: EditSkillComponent, canActivate:[AuthGuardService] },
+  { path: "addSkill", component: AddSkillComponent, canActivate:[AuthGuardService] },
+  { path: "deleteSkill", component: DeleteSkillComponent, canActivate:[AuthGuardService] },
   
-  { path: "epps", component: ListEPPComponent },
-  { path: "editEPP", component: EditEPPComponent },
-  { path: "addEPP", component: AddEPPComponent },
-  { path: "deleteEPP", component: DeleteEPPComponent },
+  { path: "epps", component: ListEPPComponent, canActivate:[AuthGuardService] },
+  { path: "editEPP", component: EditEPPComponent, canActivate:[AuthGuardService] },
+  { path: "addEPP", component: AddEPPComponent, canActivate:[AuthGuardService] },
+  { path: "deleteEPP", component: DeleteEPPComponent, canActivate:[AuthGuardService] },
 
   { path: "login", component: LoginComponent },
-  { path: "logout", component: LogoutComponent }
+  { path: "logout", component: LogoutComponent, canActivate:[AuthGuardService] }
 ];
 
 @NgModule({

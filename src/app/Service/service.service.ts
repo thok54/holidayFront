@@ -19,16 +19,7 @@ export class ServiceService {
   UrlProject = "http://localhost:8080/project";
   UrlSkill = "http://localhost:8080/skill";
   UrlEPP = "http://localhost:8080/employee_project_period";
-  UrlLogIn = "http://localhost:8080/login";
-  UrlLogOut = "http://localhost:8080/logout";
-
-  login(){
-    return this.http.get<any>(this.UrlLogIn);
-  }
-
-  logout(){
-    return this.http.get<any>(this.UrlLogOut);
-  }
+ 
 
   getCapUsers() {
     return this.http.get<CapUser[]>(this.UrlUser);
@@ -38,6 +29,9 @@ export class ServiceService {
   }
   getCapUserById(id: number) {
     return this.http.get<CapUser>(this.UrlUser + "/" + id);
+  }
+  getCapUserByEmail(email: string){
+    return this.http.get<CapUser>(this.UrlUser + "/email/" + email);
   }
   updateCapUser(cap_user: CapUser) {
     return this.http.put<CapUser>(this.UrlUser + "/" + cap_user.id, cap_user);
