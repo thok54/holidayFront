@@ -3,6 +3,5 @@ Execute the back-end part of the project(holidayBack repository) as a spring-boo
 
 TODO: 
     -Encryption
-    -Login/Logout(AUTHENTIFICATION.SERVICE)
     -Restricted Navigation
     -Holiday request tool (Checking a petition is possible based on Project Skill requirements and absent employees);

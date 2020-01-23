@@ -8,7 +8,8 @@ import { AuthenticationService } from "../Service/authentication.service";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  email = "javainuse";
+  //TWEAK DEFAULT VALUES IN LABELS
+  email = "jeck@gmail.com";
   password = "password";
   invalidLogin = false;
 

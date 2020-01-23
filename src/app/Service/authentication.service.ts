@@ -1,23 +1,22 @@
 import { Injectable } from "@angular/core";
 import { CapUser } from "../Modelo/CapUser";
-import { ServiceService } from './service.service';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthenticationService {
   cap_user: CapUser;
-  constructor(private service: ServiceService) {}
+  constructor(private http: HttpClient) {}
 
   authenticate(email, password) {
-    //TWEAK HERE
-    this.cap_user = this.service.getCapUserByEmail(email).subscribe;
-    /*this.service.getCapUserByEmail(email).subscribe(data => {
-      this.cap_user = data;
-    });*/
-    console.log(this.cap_user);
-    
-    if (email === "javainuse" && password === "password") {
+    this.http
+      .get<CapUser>("http://localhost:8080/cap_user/email/" + email)
+      .subscribe(data => {
+        this.cap_user = data;
+      });
+
+    if (password === this.cap_user.password) {
       sessionStorage.setItem("email", email);
       return true;
     } else {
