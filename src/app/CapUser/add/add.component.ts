@@ -22,6 +22,8 @@ export class AddComponent implements OnInit {
     this.capUser.email = email;
     this.capUser.password = password;
 
+    console.log(this.capUser);
+    console.log(this.employee);
     this.service.addCapUser(this.capUser).subscribe();
 
     this.service.addEmployee(this.employee).subscribe(data => {

@@ -30,6 +30,7 @@ import { AddEPPComponent } from './EPP/add/add.component';
 import { DeleteEPPComponent } from './EPP/delete/delete.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { LogoutComponent } from './logout/logout.component';
     AddEPPComponent,
     DeleteEPPComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    StartPageComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [ServiceService],
