@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   email = "jeck@gmail.com";
   password = "password";
   //*************************************************************************** */
-  invalidLogin = false;
 
   constructor(
     private router: Router,
@@ -27,7 +26,7 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     if (this.loginservice.authenticate(this.email, this.password)) {
       this.router.navigate([""]);
-      this.invalidLogin = false;
-    } else this.invalidLogin = true;
+    }
+    else console.log("BAD CREDENTIALS!!!");
   }
 }

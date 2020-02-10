@@ -9,25 +9,20 @@ export class AuthenticationService {
   cap_user: CapUser;
   constructor(private http: HttpClient) {}
 
-  authenticate(email, password) {
-    this.http
+  async authenticate(email, password) {
+    this.cap_user = await this.http
       .get<CapUser>("http://localhost:8080/cap_user/email/" + email)
-      .subscribe(data => {
-        this.cap_user = data;
-      });
-
+      .toPromise();
     if (password === this.cap_user.password) {
       sessionStorage.setItem("email", email);
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem("email");
-    console.log(!(user === null));
-    return !(user === null);
+    let email = sessionStorage.getItem("email");
+    return !(email === null);
   }
 
   logOut() {
