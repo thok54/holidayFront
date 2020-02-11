@@ -23,10 +23,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  checkLogin() {
-    if (this.loginservice.authenticate(this.email, this.password)) {
+  async checkLogin() {
+    let isLogged = await this.loginservice.authenticate(
+      this.email,
+      this.password
+    );
+    if (isLogged) {
       this.router.navigate([""]);
-    }
-    else console.log("BAD CREDENTIALS!!!");
+    } else console.log("BAD CREDENTIALS!!!");
   }
 }
